@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: พ.ร.บ. อากาศสะอาด</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Kanit', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 300px;
+            max-height: 400px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 350px;
+            }
+        }
+        .gradient-bg {
+            background: linear-gradient(135deg, #00A1E4, #0072BC);
+        }
+        .icon-bg {
+            background-color: #00BADE;
+            color: white;
+        }
+        .card-hover:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <header class="gradient-bg text-white text-center py-12 px-4 shadow-lg">
+        <div class="max-w-4xl mx-auto">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4">เคยสงสัยไหม? ทำไมเราต้องทนอยู่กับฝุ่น PM2.5</h1>
+            <p class="text-xl md:text-2xl font-light">ถึงเวลาทวงคืน "สิทธิ" ที่จะได้หายใจในอากาศสะอาด ด้วย พ.ร.บ. อากาศสะอาด</p>
+        </div>
+    </header>
+
+    <main class="max-w-6xl mx-auto p-4 md:p-8">
+
+        <section id="problem" class="my-12">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#F15A29]">1. ปัญหาที่เราเจอ (BEFORE)</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">ก่อนมีกฎหมายฉบับนี้ เราต่างเผชิญกับผลกระทบจากมลพิษทางอากาศที่ส่งผลเสียต่อสุขภาพและเศรษฐกิจโดยรวม</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-center">ผลกระทบต่อสุขภาพและเศรษฐกิจ</h3>
+                    <ul class="space-y-4">
+                        <li class="flex items-start"><span class="text-3xl mr-4">🏭</span><div><strong class="text-gray-900">หมอกควันพิษ:</strong> จากโรงงาน, การจราจร, และการเผาไหม้ในที่โล่ง</div></li>
+                        <li class="flex items-start"><span class="text-3xl mr-4">🏥</span><div><strong class="text-gray-900">สุขภาพพัง:</strong> เพิ่มความเสี่ยงโรคภูมิแพ้, หอบหืด, และมะเร็งปอด</div></li>
+                        <li class="flex items-start"><span class="text-3xl mr-4">💰</span><div><strong class="text-gray-900">ภาระค่าใช้จ่าย:</strong> ค่าหน้ากาก, เครื่องฟอกอากาศ, และค่ารักษาพยาบาลมหาศาล</div></li>
+                        <li class="flex items-start"><span class="text-3xl mr-4">❓</span><div><strong class="text-gray-900">ไร้คนรับผิดชอบชัดเจน:</strong> ปัญหาเกิดขึ้นซ้ำซาก แต่การแก้ไขไม่เคยยั่งยืน</div></li>
+                    </ul>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold mb-4 text-center">สัดส่วนโรคที่เกี่ยวข้องกับมลพิษทางอากาศ</h3>
+                    <div class="chart-container">
+                        <canvas id="healthImpactChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="solution" class="my-16 py-12 bg-white rounded-lg shadow-xl px-6">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#0072BC]">2. พ.ร.บ. อากาศสะอาด จะเข้ามาเปลี่ยนอะไร? (AFTER)</h2>
+            <p class="text-center text-gray-600 mb-10 max-w-3xl mx-auto">กฎหมายฉบับนี้ได้วาง 4 แกนหลัก เพื่อปฏิวัติการจัดการมลพิษทางอากาศของประเทศอย่างเป็นระบบ</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md transition-all duration-300 card-hover border-t-4 border-[#00A1E4]">
+                    <div class="w-16 h-16 rounded-full icon-bg flex items-center justify-center text-4xl mb-4 mx-auto">✅</div>
+                    <h4 class="text-lg font-bold text-center mb-2">หลักที่ 1: สิทธิในอากาศสะอาด</h4>
+                    <p class="text-sm text-center text-gray-600">อากาศดีไม่ใช่แค่ความฝัน แต่เป็นสิทธิที่ฟ้องร้องได้ รัฐต้องรับผิดชอบและเยียวยาผู้ได้รับผลกระทบ</p>
+                </div>
+                
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md transition-all duration-300 card-hover border-t-4 border-[#00A1E4]">
+                    <div class="w-16 h-16 rounded-full icon-bg flex items-center justify-center text-4xl mb-4 mx-auto">💸</div>
+                    <h4 class="text-lg font-bold text-center mb-2">หลักที่ 2: คนก่อมลพิษต้องจ่าย</h4>
+                    <p class="text-sm text-center text-gray-600">ใครทำอากาศเสีย ต้องรับผิดชอบค่าใช้จ่ายในการแก้ไขและฟื้นฟูทั้งหมด ไม่ใช่ผลักภาระให้สังคม</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md transition-all duration-300 card-hover border-t-4 border-[#00A1E4]">
+                    <div class="w-16 h-16 rounded-full icon-bg flex items-center justify-center text-4xl mb-4 mx-auto">🤝</div>
+                    <h4 class="text-lg font-bold text-center mb-2">หลักที่ 3: บูรณาการจัดการ</h4>
+                    <p class="text-sm text-center text-gray-600">มี "คณะกรรมการอากาศสะอาดแห่งชาติ" กำหนดเป้าหมายชัดเจน ให้ทุกหน่วยงานทำงานไปในทิศทางเดียวกัน</p>
+                </div>
+
+                <div class="bg-gray-50 p-6 rounded-lg shadow-md transition-all duration-300 card-hover border-t-4 border-[#00A1E4]">
+                    <div class="w-16 h-16 rounded-full icon-bg flex items-center justify-center text-4xl mb-4 mx-auto">📊</div>
+                    <h4 class="text-lg font-bold text-center mb-2">หลักที่ 4: ข้อมูลโปร่งใส</h4>
+                    <p class="text-sm text-center text-gray-600">ประชาชนต้องเข้าถึงข้อมูลคุณภาพอากาศและแหล่งกำเนิดมลพิษได้แบบ Real-time เพื่อตรวจสอบและป้องกันตัวเอง</p>
+                </div>
+
+            </div>
+        </section>
+
+        <section id="benefits" class="my-12">
+            <h2 class="text-3xl font-bold text-center mb-2 text-[#F89921]">3. ชีวิตเราจะดีขึ้นอย่างไร?</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">การบังคับใช้กฎหมายจะสร้างผลกระทบเชิงบวกในหลายมิติ ตั้งแต่คุณภาพชีวิตไปจนถึงเศรษฐกิจของประเทศ</p>
+            <div class="bg-white p-6 rounded-lg shadow-md">
+                 <h3 class="text-xl font-bold mb-4 text-center">เปรียบเทียบดัชนีชี้วัดคุณภาพชีวิต (ก่อน vs. หลัง)</h3>
+                <div class="chart-container h-96 md:h-[450px] max-w-4xl">
+                    <canvas id="benefitsChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-gray-800 text-white py-12 px-4 mt-16">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-4">มาร่วมเป็นส่วนหนึ่งของการเปลี่ยนแปลง</h2>
+            <p class="text-2xl font-semibold mb-6 tracking-widest">ศึกษา | ส่งเสียง | สนับสนุน</p>
+            <hr class="border-gray-600 my-6">
+            <p class="font-semibold">จัดทำโดย: ภาควิชาวิทยาศาสตร์สิ่งแวดล้อม</p>
+            <p class="text-sm text-gray-400 mt-2">เพื่อสร้างความรู้ สู่อนาคตที่ยั่งยืน</p>
+        </div>
+    </footer>
+
+    <script>
+        const tooltipCallback = {
+            plugins: {
+                tooltip: {
+                    callbacks: {
+                        title: function(tooltipItems) {
+                            const item = tooltipItems[0];
+                            let label = item.chart.data.labels[item.dataIndex];
+                            if (Array.isArray(label)) {
+                                return label.join(' ');
+                            }
+                            return label;
+                        }
+                    }
+                }
+            }
+        };
+
+        const healthImpactCtx = document.getElementById('healthImpactChart').getContext('2d');
+        new Chart(healthImpactCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['โรคระบบทางเดินหายใจ', 'โรคหัวใจและหลอดเลือด', 'มะเร็งปอด', 'อื่นๆ'],
+                datasets: [{
+                    label: 'สัดส่วนโรค',
+                    data: [45, 30, 15, 10],
+                    backgroundColor: ['#00A1E4', '#0072BC', '#F15A29', '#F89921'],
+                    borderColor: '#FFFFFF',
+                    borderWidth: 3
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipCallback,
+                plugins: {
+                    ...tooltipCallback.plugins,
+                    legend: {
+                        position: 'bottom',
+                    }
+                }
+            }
+        });
+
+        const benefitsCtx = document.getElementById('benefitsChart').getContext('2d');
+        new Chart(benefitsCtx, {
+            type: 'bar',
+            data: {
+                labels: ['ค่าเฉลี่ยฝุ่น PM2.5 (µg/m³)', ['ค่าใช้จ่ายสาธารณสุข', '(พันล้านบาท)'], ['ความเชื่อมั่นของประชาชน', '(%)']],
+                datasets: [
+                    {
+                        label: 'ก่อนมี พ.ร.บ.',
+                        data: [75, 200, 25],
+                        backgroundColor: '#F15A29',
+                        borderRadius: 4
+                    },
+                    {
+                        label: 'หลังมี พ.ร.บ. (คาดการณ์)',
+                        data: [25, 80, 75],
+                        backgroundColor: '#00A1E4',
+                        borderRadius: 4
+                    }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                ...tooltipCallback,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: {
+                            color: '#e5e7eb'
+                        }
+                    },
+                    x: {
+                        grid: {
+                            display: false
+                        }
+                    }
+                },
+                plugins: {
+                     ...tooltipCallback.plugins,
+                    legend: {
+                        position: 'top',
+                    }
+                }
+            }
+        });
+    </script>
+
+</body>
+</html>
+
